@@ -1,7 +1,34 @@
 package de.marcoedenhofer.javarustffi;
 
+import java.lang.foreign.FunctionDescriptor;
+import java.lang.foreign.Linker;
+import java.lang.foreign.SymbolLookup;
+import java.lang.invoke.MethodHandle;
+import java.nio.file.Path;
+
 public class Application {
-    static void main() {
-        IO.println("Hello from Java 25");
+    static void main() throws Throwable {
+        String libPath = System.getenv("FUNCTIONS_API_LIB");
+        if (libPath == null || libPath.isBlank()) {
+            libPath = "./rust-api/target/debug/libfunctions_api.so";
+        }
+
+        Path path = Path.of(libPath).toAbsolutePath();
+        System.out.println("Using native library: " + path);
+
+        System.load(path.toString());
+        SymbolLookup lookup = SymbolLookup.loaderLookup();
+
+        var symbol = lookup.find("hello_from_rust");
+        if (symbol.isEmpty()) {
+            throw new UnsatisfiedLinkError("Symbol hello_from_rust not found in " + path);
+        }
+
+        MethodHandle mh = Linker.nativeLinker().downcallHandle(symbol.get(),
+                FunctionDescriptor.ofVoid());
+
+        System.out.println("Calling hello_from_rust via FFI...");
+        mh.invoke();
+        System.out.println("Returned from hello_from_rust.");
     }
 }
