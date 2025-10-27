@@ -8,3 +8,6 @@ crate-type = ["cdylib"]
 
 [dependencies]
 functions-core = { path = "../functions-core" }
+
+[build-dependencies]
+cbindgen = "0.28.0"
