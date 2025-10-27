@@ -9,5 +9,5 @@ fn main() {
         .with_language(cbindgen::Language::C)
         .generate()
         .expect("Unable to generate bindings")
-        .write_to_file("functions.h");
+        .write_to_file("../include/functions.h");
 }
