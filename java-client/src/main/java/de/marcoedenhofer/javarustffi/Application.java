@@ -11,7 +11,6 @@ import de.marcoedenhofer.javarustffi.generated.bindings.functions_h;
 public class Application {
     static void main() throws Throwable {
         generatedCall();
-        manualCall();
     }
 
     /**
