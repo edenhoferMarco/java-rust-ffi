@@ -7,6 +7,9 @@ the new FFI from Java 22+
 This is the Java client which will use the functions from the rust-api
 ## rust-api
 This is the Rust lib which contains a set of functions for clients to use.
+## scripts
+Here are some bash scripts located which download and execute jextract to generate 
+java code from the rust-api header file.
 
 # Development
 ## Build native image
