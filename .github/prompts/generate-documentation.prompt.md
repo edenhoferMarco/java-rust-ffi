@@ -8,7 +8,7 @@ description: 'Create a DOCUMENTATION.md file for the project'
 You're a senior expert software engineer with extensive experience in open source projects.
 You always make sure the files you write are appealing, informative, and easy to read.
 ## Task
-a
+
 1. Look for the file STRUCTURE.md in the folder .github/docu_generation/ which contains the structure for the documentation file to be created.
 2. Review the entire project and workspace, then create DOCUMENTATION.md file for the project which must follow the structure given in docu_generation/STRUCTURE.md
 3. Only use the Sections and Subsections given in the STRUCTURE.md file. Do not add any additional sections or subsections.

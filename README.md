@@ -39,5 +39,11 @@ executing `./java-client`
 > `sudo ldconfig`.
 
 # Documentation
+## Copilot generated:
+This repository features a test of auto generating documentation via promptfile:
+[generate-documentation.prompt.md](.github/prompts/generate-documentation.prompt.md) 
+and a given structure: [STRUCTURE.md](.github/docu_generation/STRUCTURE.md)
+
+See [DOCUMENTATION.md](./DOCUMENTATION.md)
 ## DeepWiki
 This repository is indexed at DeepWiki. Check it out at https://deepwiki.com/edenhoferMarco/java-rust-ffi
